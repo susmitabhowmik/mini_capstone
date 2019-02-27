@@ -6,5 +6,3 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-product = Product.new(name:"pen", price: 2, image_url:"pen.jpg", description: "This pen is the best pen you will ever use. It writes very smoothly.")
-product.save
