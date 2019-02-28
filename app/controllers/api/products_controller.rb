@@ -13,4 +13,15 @@ class Api::ProductsController < ApplicationController
     @pen = Product.second
     render 'pen.json.jbuilder'
   end
+
+  def inventory
+    @item = []
+    @product = params[:name]
+    Product.all.each do |product|
+      if @product == product.name
+        @item << product
+      end
+    end
+      render 'inventory.json.jbuilder'
+  end
 end

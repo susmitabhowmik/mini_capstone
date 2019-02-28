@@ -3,5 +3,6 @@ Rails.application.routes.draw do
     get "/all_products" => "products#all_products"
     get "/hairspray" => "products#hairspray"
     get "/pen" => "products#pen"
+    get "/products" => "products#inventory"
   end
 end
