@@ -1,7 +1,7 @@
 class Api::ProductsController < ApplicationController
-  def all_products
+  def index
     @products = Product.all
-    render 'all_products.json.jbuilder'
+    render 'index.json.jbuilder'
   end
 
   def hairspray
