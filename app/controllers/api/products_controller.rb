@@ -34,7 +34,7 @@ class Api::ProductsController < ApplicationController
     render 'show.json.jbuilder'
   end
 
-  def destroy
+  def delete
     #find the product I want to destroy
     the_id = params[:id]
     @product = Product.find_by(id: the_id)
