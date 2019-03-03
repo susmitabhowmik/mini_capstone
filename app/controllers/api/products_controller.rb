@@ -4,24 +4,9 @@ class Api::ProductsController < ApplicationController
     render 'index.json.jbuilder'
   end
 
-  def hairspray
-    @hairspray = Product.first
-    render 'hairspray.json.jbuilder'
-  end
-
-  def pen
-    @pen = Product.second
-    render 'pen.json.jbuilder'
-  end
-
-  def inventory
-    @item = []
-    @product = params[:name]
-    Product.all.each do |product|
-      if @product == product.name
-        @item << product
-      end
-    end
-      render 'inventory.json.jbuilder'
+  def show
+     the_id = params[:id]
+     @product = Product.find_by(id: the_id)
+     render 'show.json.jbuilder'
   end
 end
