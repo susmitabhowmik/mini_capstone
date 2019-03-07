@@ -1,5 +1,5 @@
 class Product < ApplicationRecord
- def is_discounted?
+def is_discounted?
   if price < 10
     p true
   else
