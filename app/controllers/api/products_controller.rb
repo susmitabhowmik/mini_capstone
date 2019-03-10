@@ -12,7 +12,10 @@ class Api::ProductsController < ApplicationController
       @products = @products.where("price < ? ", 100)
     end
 
-    @products = @products.order(price: :asc)
+    if params[:sort] && params[:order]
+      # If there is params sort at all make that the key in the search
+      @products = @products.order(params[:sort] => params[:order])
+    end
 
     render 'index.json.jbuilder'
   end
