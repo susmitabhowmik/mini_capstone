@@ -12,6 +12,8 @@ class Api::ProductsController < ApplicationController
       @products = @products.where("price < ? ", 100)
     end
 
+    @products = @products.order(price: :asc)
+
     render 'index.json.jbuilder'
   end
 
