@@ -1,4 +1,6 @@
 class Product < ApplicationRecord
+  belongs_to :supplier
+  has_many :images
 
   validates :name, :price, presence: true
   validates :name, uniqueness: true
@@ -22,13 +24,5 @@ class Product < ApplicationRecord
   def total
     total = price + tax
     p total
-  end
-
-  def supplier
-    Supplier.find_by(id: supplier_id)
-  end
-
-  def images
-    Image.find_by(id: product_id)
   end
 end
