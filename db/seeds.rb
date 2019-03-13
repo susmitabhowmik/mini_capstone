@@ -7,5 +7,3 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-Image.create({url:,product_id: })
-Image.create({url:",product_id: })
