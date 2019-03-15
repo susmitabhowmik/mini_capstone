@@ -1,6 +1,6 @@
 class Api::OrdersController < ApplicationController
   def index
-    @orders = user.orders
+    @orders = current_user.orders
     render 'index.json.jbuilder'
   end
 
@@ -21,7 +21,7 @@ class Api::OrdersController < ApplicationController
       tax: calculated_tax,
       total:calculated_total
     })
-    @order.save!
+    @order.save
     render 'show.json.jbuilder'
   end
 end
