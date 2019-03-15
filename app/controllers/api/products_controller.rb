@@ -1,4 +1,6 @@
 class Api::ProductsController < ApplicationController
+  before_action :authenticate_admin, except: [:index, :show]
+  # everyone
   def index
     search_term = params[:search]
     products_lower_than = params[:price].to_i
@@ -20,6 +22,8 @@ class Api::ProductsController < ApplicationController
     render 'index.json.jbuilder'
   end
 
+  #everyone
+
   def show
     p 'current_user'
     p current_user
@@ -27,6 +31,8 @@ class Api::ProductsController < ApplicationController
     @product = Product.find_by(id: the_id)
     render 'show.json.jbuilder'
   end
+
+  #only admin
 
   def create
     @product = Product.new({
@@ -43,6 +49,8 @@ class Api::ProductsController < ApplicationController
     end
   end
 
+  #only admin
+
   def update
     #find the product I want to update
     @product = Product.find(params[:id])
@@ -58,6 +66,8 @@ class Api::ProductsController < ApplicationController
       render 'error.json.jbuilder', status: :unprocessible_entry
     end
   end
+
+  #only admin
 
   def delete
     #find the product I want to destroy
