@@ -4,6 +4,7 @@ class Product < ApplicationRecord
   has_many :orders
   has_many :product_categories
   has_many :categories, through: :product_categories
+  has_many :carted_products
 
   validates :name, :price, presence: true
   validates :name, uniqueness: true
