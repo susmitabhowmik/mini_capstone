@@ -13,16 +13,14 @@ class Api::OrdersController < ApplicationController
     calculated_tax = calculated_subtotal * tax_rate
     calculated_total = calculated_subtotal + calculated_tax
 
-
-  @order = Order.new({
+    current_user.carted_products.where(status: "carted")
+      @order = Order.new({
         user_id: current_user.id,
-        product_id: params[:product_id],
-        quantity: params[:quantity],
         subtotal: calculated_subtotal,
         tax: calculated_tax,
         total:calculated_total
       })
+      end
+      
       render 'show.json.jbuilder'
-    
-  end
-end
+      end

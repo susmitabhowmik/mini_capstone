@@ -11,6 +11,7 @@ class Api::CartedProductsController < ApplicationController
       quantity: params[:quantity],
       status: "carted")
     @carted_product.save
+  
     render 'show.json.jbuilder'
   end
 end
