@@ -5,4 +5,4 @@
   json.in_stock? product.in_stock?
   json.supplier product.supplier
   json.categories product.categories
-  
+  json.images product.images
