@@ -9,6 +9,11 @@ class ProductsController < ApplicationController
     render 'show.html.erb'
   end
 
+  def new
+    @suppliers = Supplier.all
+    render 'new.html.erb'
+  end
+
   def create
     @product = Product.new(
       name: params[:name],

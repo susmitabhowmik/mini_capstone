@@ -1,7 +1,7 @@
   <p>id: <%= @product.id %></p>
   <p>name: <%= @product.name %></p>
   <p>price: <%= @product.price %></p>
-  <p>in_stock?: <%= @product.in_stock? %></p>
+  <p>in_stock: <%= @product.in_stock? %></p>
   <p>supplier: <%= @product.supplier.name %></p>
   <p>categories: <%= @product.categories.each do |category|
     category.name
