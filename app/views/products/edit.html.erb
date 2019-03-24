@@ -1,0 +1,13 @@
+<form action="/products/<%= @product.id%>" method="post">
+  <input type="hidden" name="_method" value="patch" />
+  <p>name: <input type="text" name="name" value="<%= @product.name %>"></p>
+  <p>price: <input type="decimal" name="price" value="<%= @product.price %>"></p>
+  <p>description: <input type="text" name="description" value="<%= @product.description %>"></p>
+  <p>in_stock: <input type="boolean" name="in_stock" value="<%= @product.in_stock %>"></p>
+    <select name="supplier_id">
+    <% @suppliers.each do |supplier| %>
+      <option value="<%= supplier.id %>"><%= supplier.name %></option>
+    <% end %>
+  </select>
+  <input type="submit" value="Update a product">
+</form>

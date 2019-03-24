@@ -1,9 +1,14 @@
+  <h2> I am in my show action </h2>
+
   <p>id: <%= @product.id %></p>
   <p>name: <%= @product.name %></p>
   <p>price: <%= @product.price %></p>
-  <p>in_stock: <%= @product.in_stock? %></p>
+  <p>description: <%= @product.description %></p>
+  <p>in_stock?: <%= @product.in_stock? %></p>
   <p>supplier: <%= @product.supplier.name %></p>
   <p>categories: <%= @product.categories.each do |category|
     category.name
   end %></p>
  <!--  <p> images: <img src="<%= @product.images.all%>"> </p> -->
+
+ <a href="/products/<%= @product.id %>" data-method="delete" rel="nofollow"> Delete the item </a>

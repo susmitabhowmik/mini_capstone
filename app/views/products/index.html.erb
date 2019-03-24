@@ -1,8 +1,11 @@
+<h2>Here are all the products</h2>
+
 <% @products.each do |product| %>
   <p>id: <%=product.id%></p>
   <p>name: <%=product.name%></p>
   <p>price: <%=product.price%></p>
-  <p>in_stock: <%=product.in_stock?%></p>
+  <p>description: <%=product.description%></p>
+  <p>in_stock?: <%=product.in_stock?%></p>
   <p>supplier: <%=product.supplier.name%></p>
   <!-- <p>categories: <%=product.categories.name%></p>
   <p> images: <img src="<%= product.images.all%>"> </p> -->
